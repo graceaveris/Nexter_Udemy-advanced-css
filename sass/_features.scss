@@ -1,0 +1,35 @@
+.features {
+    grid-column: center-start / center-end;
+
+    margin: 15em 0;
+
+    display: grid;
+    //see below, auto-fit allows us to generate as many columns as will fit within the container space.
+    //this allows responsive design without media queries!
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); 
+    //above
+    grid-gap: 6rem;
+    align-items: start;
+}
+
+.feature {
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+
+        grid-row: 1 / span 2;
+
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}
